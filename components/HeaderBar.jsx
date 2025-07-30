@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Logo from "./Logo";
-import { Playwrite_AU_QLD, Bebas_Neue, Luckiest_Guy, Permanent_Marker } from "next/font/google";
+import { Playwrite_AU_QLD, Bebas_Neue, Luckiest_Guy, Permanent_Marker, Roboto_Slab } from "next/font/google";
 import { useState, useEffect } from "react";
 
 
@@ -21,6 +21,11 @@ const luckiestGuy = Luckiest_Guy({
 })
 const permanentMaker = Permanent_Marker({
     weight: "400",
+    subsets: ['latin']
+})
+
+const robotoSlab = Roboto_Slab({
+    weight: "500",
     subsets: ['latin']
 })
 
@@ -47,7 +52,7 @@ function HeaderBar() {
     return (
         <div className="relative">
             {/* Header principale */}
-            <header className={`w-full py-4 px-6 sm:py-8 sm:px-12 flex items-center justify-between fixed top-0 left-0 ${isScrolled ? "bg-white" : "bg-transparent"} backdrop-blur-md z-20 transform transition-all duration-300 ease-in-out ${isOpen ? "-translate-x-full" : "translate-x-0"} font-semibold`}>
+            <header className={`${robotoSlab.className} w-full py-4 px-6 sm:py-8 sm:px-40 flex items-center justify-between fixed top-0 left-0 ${isScrolled ? "bg-white" : "bg-transparent"} backdrop-blur-md z-20 transform transition-all duration-300 ease-in-out ${isOpen ? "-translate-x-full" : "translate-x-0"}`}>
                 <Link href="/" className="flex items-baseline gap-4">
                     <Logo className="text-amber-400" width={30} height={30} />
                     <h1 className={`${bebasNeue.className} text-3xl sm:text-4xl`}>
@@ -55,13 +60,10 @@ function HeaderBar() {
                     </h1>
                 </Link>
 
-                <Link href={"/"} className={`hidden md:flex justify-center items-center text-center px-5 py-2 border border-transparent rounded-2xl ${!isScrolled ? "hover:bg-white hover:border-white" : "hover:-translate-y-1"} transition-all duration-300 active:opacity-40 uppercase`}>Chi Siamo</Link>
-                <Link href={"/"} className={`hidden md:flex justify-center items-center text-center px-5 py-2 border border-transparent rounded-2xl ${!isScrolled ? "hover:bg-white hover:border-white" : "hover:-translate-y-1"} transition-all duration-300 active:opacity-40 uppercase`}>Dove Siamo</Link>
-                <Link href={"/"} className={`hidden md:flex justify-center items-center text-center px-5 py-2 border border-transparent rounded-2xl ${!isScrolled ? "hover:bg-white hover:border-white" : "hover:-translate-y-1"} transition-all duration-300 active:opacity-40 uppercase`}>contattaci</Link>
-                <Link href={"/"} className={`hidden md:flex justify-center items-center text-center px-5 py-2 border ${isScrolled ? "bg-white border-[#610007] hover:bg-[#610007] hover:text-[#fff] " : "border-transparent hover:bg-white"} rounded-2xl transition-all duration-300 active:opacity-80 uppercase`}>menu</Link> {/* PROBABILMENTE DA SOSTITUIRE CON "CONTATTACI"*/}
-                <nav className="hidden md:flex justify-center items-center gap-10">
-                </nav>
-
+                <Link href={"/"} className={`hidden md:flex justify-center items-center text-center px-5 py-2 border border-transparent rounded-2xl ${!isScrolled ? "hover:bg-white hover:border-white" : "hover:bg-slate-100"} transition-all duration-300 active:opacity-40 uppercase`}>Chi Siamo</Link>
+                <Link href={"/"} className={`hidden md:flex justify-center items-center text-center px-5 py-2 border border-transparent rounded-2xl ${!isScrolled ? "hover:bg-white hover:border-white" : "hover:bg-slate-100"} transition-all duration-300 active:opacity-40 uppercase`}>Dove Siamo</Link>
+                <Link href={"/"} className={`hidden md:flex justify-center items-center text-center px-5 py-2 border border-transparent rounded-2xl ${!isScrolled ? "hover:bg-white hover:border-white" : "hover:bg-slate-100"} transition-all duration-300 active:opacity-40 uppercase`}>contattaci</Link>
+                <Link href={"/"} className={`hidden md:flex justify-center items-center text-center px-5 py-2 border ${isScrolled ? "bg-white border-red-400 hover:bg-red-400 hover:text-[#fff] " : "border-transparent hover:bg-white"} rounded-2xl transition-all duration-300 active:opacity-80 uppercase`}>menu</Link> {/* PROBABILMENTE DA SOSTITUIRE CON "CONTATTACI"      color porpora:  #610007*/}
 
                 <button className="md:hidden px-4" onClick={toggle}>
                     <i className="fa-solid fa-bars text-2xl" />
@@ -69,16 +71,16 @@ function HeaderBar() {
             </header>
 
             {/* Menu Mobile */}
-            <div className={`py-6 px-6 sm:py-8 sm:px-12 fixed inset-0 bg-white flex flex-col gap-20 z-10 transform transition-transform duration-300 ease-in-out ${isOpen ? "-translate-x-0" : "translate-x-full"} font-semibold`}>
-                <button onClick={toggle} className="self-end text-lg px-4">
-                    Chiudi <i className="fa-solid fa-x" />
+            <div className={`${robotoSlab.className} text-red-400 py-6 px-6 sm:py-8 sm:px-12 fixed inset-0 bg-white flex flex-col gap-20 z-10 transform transition-transform duration-300 ease-in-out ${isOpen ? "-translate-x-0" : "translate-x-full"} font-semibold`}>
+                <button onClick={toggle} className="text-slate-500 self-end text-xl px-4 uppercase">
+                    Chiudi <i className="fa-regular fa-circle-xmark text-xl"/>
                 </button>
 
-                <nav className="flex flex-col items-center gap-6 text-xl">
-                    <Link href="/menu" className="transition-all duration-200 ease-in-out active:opacity-20 uppercase">Menu</Link>
-                    <Link href="/prenota" className="transition-all duration-200 ease-in-out active:opacity-20 uppercase">Contattaci</Link>
-                    <Link href="/chi-siamo" className="transition-all duration-200 ease-in-out active:opacity-20 uppercase">Dove Siamo</Link>
-                    <Link href="/chi-siamo" className="transition-all duration-200 ease-in-out active:opacity-20 uppercase">Chi Siamo</Link>
+                <nav className="flex flex-col items-end-safe gap-6 px-10">
+                    <Link href="/menu" className="transition-all duration-200 ease-in-out active:opacity-20 text-2xl uppercase">Menu</Link>
+                    <Link href="/prenota" className="transition-all duration-200 ease-in-out active:opacity-20 text-2xl uppercase">Contattaci</Link>
+                    <Link href="/chi-siamo" className="transition-all duration-200 ease-in-out active:opacity-20 text-2xl uppercase">Dove Siamo</Link>
+                    <Link href="/chi-siamo" className="transition-all duration-200 ease-in-out active:opacity-20 text-2xl uppercase">Chi Siamo</Link>
                 </nav>
             </div>
         </div>
