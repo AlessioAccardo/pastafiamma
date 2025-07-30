@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Logo from "./Logo";
 import { Playwrite_AU_QLD, Bebas_Neue, Luckiest_Guy, Permanent_Marker } from "next/font/google";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 
 // SCEGLIERE UNO DI QUESTI FONT PER IL TITOLO
@@ -27,41 +27,58 @@ const permanentMaker = Permanent_Marker({
 
 function HeaderBar() {
     const [isOpen, setIsOpen] = useState(false);
+    const [isScrolled, setIsScrolled] = useState(false);
     const toggle = () => setIsOpen(!isOpen);
+
+
+    useEffect(() => {
+        const handleScroll = () => {
+            if (window.scrollY > 50) {
+                setIsScrolled(true);
+            } else {
+                setIsScrolled(false);
+            }
+        };
+
+        // Aggiungo listener su scroll
+        window.addEventListener('scroll', handleScroll);
+    }, [isScrolled]);
 
     return (
         <div className="relative">
             {/* Header principale */}
-            <header className={`w-full py-4 px-6 sm:py-8 sm:px-12 flex items-center justify-between fixed top-0 left-0 bg-white/90 backdrop-blur-md z-20 transform transition-transform duration-300 ease-in-out ${isOpen ? "-translate-x-full" : "translate-x-0"}`}>
+            <header className={`w-full py-4 px-6 sm:py-8 sm:px-12 flex items-center justify-between fixed top-0 left-0 ${isScrolled ? "bg-white" : "bg-transparent"} backdrop-blur-md z-20 transform transition-all duration-300 ease-in-out ${isOpen ? "-translate-x-full" : "translate-x-0"} font-semibold`}>
                 <Link href="/" className="flex items-baseline gap-4">
-                    <Logo className="text-amber-300" width={30} height={30} />
+                    <Logo className="text-amber-400" width={30} height={30} />
                     <h1 className={`${bebasNeue.className} text-3xl sm:text-4xl`}>
                         PastaFiamma
                     </h1>
                 </Link>
 
+                <Link href={"/"} className={`hidden md:flex justify-center items-center text-center px-5 py-2 border border-transparent rounded-2xl ${!isScrolled ? "hover:bg-white hover:border-white" : "hover:-translate-y-1"} transition-all duration-300 active:opacity-40 uppercase`}>Chi Siamo</Link>
+                <Link href={"/"} className={`hidden md:flex justify-center items-center text-center px-5 py-2 border border-transparent rounded-2xl ${!isScrolled ? "hover:bg-white hover:border-white" : "hover:-translate-y-1"} transition-all duration-300 active:opacity-40 uppercase`}>Dove Siamo</Link>
+                <Link href={"/"} className={`hidden md:flex justify-center items-center text-center px-5 py-2 border border-transparent rounded-2xl ${!isScrolled ? "hover:bg-white hover:border-white" : "hover:-translate-y-1"} transition-all duration-300 active:opacity-40 uppercase`}>contattaci</Link>
+                <Link href={"/"} className={`hidden md:flex justify-center items-center text-center px-5 py-2 border ${isScrolled ? "bg-white border-[#610007] hover:bg-[#610007] hover:text-[#fff] " : "border-transparent hover:bg-white"} rounded-2xl transition-all duration-300 active:opacity-80 uppercase`}>menu</Link> {/* PROBABILMENTE DA SOSTITUIRE CON "CONTATTACI"*/}
                 <nav className="hidden md:flex justify-center items-center gap-10">
-                    <Link href={"/"} className="text-center px-6 py-3 border border-white rounded-2xl hover:opacity-80 hover:bg-slate-100 hover:border-slate-100">Menù</Link>
-                    <Link href={"/"} className="text-center px-6 py-3 border border-white rounded-2xl hover:opacity-80 hover:bg-slate-100 hover:border-slate-100">Chi Siamo</Link>
-                    <Link href={"/"} className="text-center px-6 py-3 border border-white rounded-2xl hover:opacity-80 hover:bg-slate-100 hover:border-slate-100">Prenota Ora</Link> {/* PROBABILMENTE DA SOSTITUIRE CON "CONTATTACI"*/}
                 </nav>
 
 
-                <button className="md:hidden" onClick={toggle}>
+                <button className="md:hidden px-4" onClick={toggle}>
                     <i className="fa-solid fa-bars text-2xl" />
                 </button>
             </header>
 
             {/* Menu Mobile */}
-            <div className={`fixed inset-0 bg-white flex flex-col p-10 gap-20 z-10 transform transition-transform duration-300 ease-in-out ${isOpen ? "-translate-x-0" : "translate-x-full"} `}>
-                <button onClick={toggle} className="self-end text-lg">
+            <div className={`py-6 px-6 sm:py-8 sm:px-12 fixed inset-0 bg-white flex flex-col gap-20 z-10 transform transition-transform duration-300 ease-in-out ${isOpen ? "-translate-x-0" : "translate-x-full"} font-semibold`}>
+                <button onClick={toggle} className="self-end text-lg px-4">
                     Chiudi <i className="fa-solid fa-x" />
                 </button>
 
                 <nav className="flex flex-col items-center gap-6 text-xl">
-                    <Link href="/menu" className="transition-all duration-200 ease-in-out active:opacity-15">Menù</Link>
-                    <Link href="/prenota" className="transition-all duration-200 ease-in-out active:opacity-90">Prenota</Link>
-                    <Link href="/chi-siamo" className="transition-all duration-200 ease-in-out active:opacity-90">Chi Siamo</Link>
+                    <Link href="/menu" className="transition-all duration-200 ease-in-out active:opacity-20 uppercase">Menu</Link>
+                    <Link href="/prenota" className="transition-all duration-200 ease-in-out active:opacity-20 uppercase">Contattaci</Link>
+                    <Link href="/chi-siamo" className="transition-all duration-200 ease-in-out active:opacity-20 uppercase">Dove Siamo</Link>
+                    <Link href="/chi-siamo" className="transition-all duration-200 ease-in-out active:opacity-20 uppercase">Chi Siamo</Link>
                 </nav>
             </div>
         </div>
