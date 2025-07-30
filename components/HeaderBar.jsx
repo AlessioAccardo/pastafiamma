@@ -50,7 +50,7 @@ function HeaderBar() {
     }, [isScrolled]);
 
     return (
-        <div className="relative text-black">
+        <div className="relative">
             {/* Header principale */}
             <header className={`${robotoSlab.className} w-full py-6 px-10 md:py-6 md:px-30 lg:py-8 lg:px-40 flex items-center justify-between fixed top-0 left-0 ${isScrolled ? "bg-white" : "bg-transparent"} backdrop-blur-md z-20 transform transition-all duration-300 ease-in-out ${isOpen ? "-translate-x-full" : "translate-x-0"}`}>
                 <Link href="/" className="flex items-baseline gap-4">

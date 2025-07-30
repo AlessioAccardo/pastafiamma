@@ -1,6 +1,7 @@
 function Hero() {
     return (
-        <div></div>
+        <div className="w-full max-w-[1000px]">
+        </div>
     );
 }
 
