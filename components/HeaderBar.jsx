@@ -54,7 +54,7 @@ function HeaderBar() {
             {/* Header principale */}
             <header className={`${robotoSlab.className} w-full py-4 px-6 sm:py-8 sm:px-40 flex items-center justify-between fixed top-0 left-0 ${isScrolled ? "bg-white" : "bg-transparent"} backdrop-blur-md z-20 transform transition-all duration-300 ease-in-out ${isOpen ? "-translate-x-full" : "translate-x-0"}`}>
                 <Link href="/" className="flex items-baseline gap-4">
-                    <Logo className="text-amber-400" width={30} height={30} />
+                    <Logo className="text-[#ffc72c]" width={30} height={30} />
                     <h1 className={`${bebasNeue.className} text-3xl sm:text-4xl`}>
                         PastaFiamma
                     </h1>
@@ -63,7 +63,7 @@ function HeaderBar() {
                 <Link href={"/"} className={`hidden md:flex justify-center items-center text-center px-5 py-2 border border-transparent rounded-2xl ${!isScrolled ? "hover:bg-white hover:border-white" : "hover:bg-slate-100"} transition-all duration-300 active:opacity-40 uppercase`}>Chi Siamo</Link>
                 <Link href={"/"} className={`hidden md:flex justify-center items-center text-center px-5 py-2 border border-transparent rounded-2xl ${!isScrolled ? "hover:bg-white hover:border-white" : "hover:bg-slate-100"} transition-all duration-300 active:opacity-40 uppercase`}>Dove Siamo</Link>
                 <Link href={"/"} className={`hidden md:flex justify-center items-center text-center px-5 py-2 border border-transparent rounded-2xl ${!isScrolled ? "hover:bg-white hover:border-white" : "hover:bg-slate-100"} transition-all duration-300 active:opacity-40 uppercase`}>contattaci</Link>
-                <Link href={"/"} className={`hidden md:flex justify-center items-center text-center px-5 py-2 border ${isScrolled ? "bg-white border-red-400 hover:bg-red-400 hover:text-[#fff] " : "border-transparent hover:bg-white"} rounded-2xl transition-all duration-300 active:opacity-80 uppercase`}>menu</Link> {/* PROBABILMENTE DA SOSTITUIRE CON "CONTATTACI"      color porpora:  #610007*/}
+                <Link href={"/"} className={`hidden md:flex justify-center items-center text-center px-5 py-2 border ${isScrolled ? "bg-white border-[#da291c] hover:bg-[#da291c] hover:text-[#fff] " : "border-transparent hover:bg-white"} rounded-2xl transition-all duration-300 active:opacity-80 uppercase`}>menu</Link> {/* PROBABILMENTE DA SOSTITUIRE CON "CONTATTACI"      color porpora:  #610007*/}
 
                 <button className="md:hidden px-4" onClick={toggle}>
                     <i className="fa-solid fa-bars text-2xl" />
