@@ -1,7 +1,7 @@
 function Main(props) {
     const { children } = props;
     return (
-        <main className="flex-1 flex flex-col p-4 sm:p-8">
+        <main className="flex flex-col flex-1 min-h-[1000rem]">
             {children}
         </main>
     );
