@@ -23,7 +23,7 @@ function Hero() {
                 />
                 <div className="w-full max-w-full flex flex-col justify-center items-center absolute z-10 text-5xl">
                     <p><span className="text-[#72cb8a]">Amati</span> mangiando bene: scegli la nostra <span className="text-[#ffc72c] font-extrabold">pasta</span><span className="text-[#da291c] font-extrabold"> fresca</span></p>
-                    <p>Preparata da noi con amore ogni giorno</p>
+                    <p>Preparata da noi con <span className="text-[#da291c] font-extrabold">amore</span> ogni giorno</p>
                 </div>
             </div>
             <div className="flex flex-col relative w-full overflow-hidden min-h-[75vh] justify-center items-center lg:hidden">
@@ -35,11 +35,13 @@ function Hero() {
                 />
             </div>
             <div className="flex w-full max-w-full min-h-[30rem]">
-                <div className="flex flex-col w-[50%] max-w-[50%] bg-[#da291c] p-4 lg:p-8">
-                    <p className="text-2xl max-w-full pb-3 uppercase">CHI SIAMO</p>
-                    <p className="max-w-full">
-                        Siamo la banda bassotti dei tranelli marcondirondirondelli tu vorresti la pasta in piazza eheheheheheheehhe e invece prenditi questa minchiazza
-                    </p>
+                <div className="flex flex-col w-[50%] max-w-[50%]">
+                    <div className="flex flex-col w-[80%] mx-auto text-black mt-10 lg:p-8 border border-white rounded-2xl shadow-2xl">
+                        <p className="text-2xl max-w-full pb-3 uppercase">CHI SIAMO</p>
+                        <p className="max-w-full">
+                            Siamo la banda bassotti dei tranelli marcondirondirondelli tu vorresti la pasta in piazza eheheheheheheehhe e invece prenditi questa minchiazza
+                        </p>
+                    </div>
                 </div>
                 <div className="flex flex-col justify-center items-center w-[50%] max-w-[50%]">
                     <p className="text-2xl max-w-full pb-3 uppercase">DOVE SIAMO</p>
