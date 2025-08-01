@@ -1,6 +1,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import HeaderBar from "@/components/HeaderBar";
 import "./globals.css";
+import Logo from "@/components/Logo";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -13,8 +14,11 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "PastaFiamma",
+  title: "PASTAFIAMMA",
   description: "Migliore Ristorante a Palermo",
+  icons: {
+    icon: "/logo.svg"
+  }
 };
 
 export default function RootLayout({ children }) {

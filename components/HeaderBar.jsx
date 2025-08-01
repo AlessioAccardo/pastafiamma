@@ -51,7 +51,7 @@ function HeaderBar() {
     return (
         <div className="relative">
             {/* Header principale */}
-            <header className={`${robotoSlab.className} w-full py-6 px-10 md:py-6 md:px-30 lg:py-6 lg:px-35 flex items-center justify-between fixed top-0 left-0 ${isScrolled ? "bg-[#da291c]" : "bg-transparent"} font-bold backdrop-blur-md z-20 transform transition-all duration-300 ease-in-out ${isOpen ? "-translate-x-full" : "translate-x-0"}`}>
+            <header className={`${robotoSlab.className} w-full py-6 px-10 md:py-6 md:px-30 lg:py-6 lg:px-30 flex items-center justify-between fixed top-0 left-0 ${isScrolled ? "bg-[#da291c]" : "bg-transparent"} font-bold backdrop-blur-md z-20 transform transition-all duration-300 ease-in-out ${isOpen ? "-translate-x-full" : "translate-x-0"}`}>
                 <Link href="/" className="flex items-baseline gap-4">
                     <Logo className="text-[#ffc72c] w-[30px] h-[30px] lg:w-40[px] lg:h-[40px]"  />
                     <h1 className={`${bebasNeue.className} text-[#ffc72c] text-4xl sm:text-5xl`}>
