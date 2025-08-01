@@ -1,9 +1,8 @@
 // components/MenuTabIcon.jsx
-export default function Logo({ className, width, height }) {
+export default function Logo({ className }) {
   return (
     <svg 
-      height={height}
-      width={width}
+    
       version="1.1" 
       id="_x32_" 
       xmlns="http://www.w3.org/2000/svg" 

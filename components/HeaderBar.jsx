@@ -53,25 +53,25 @@ function HeaderBar() {
             {/* Header principale */}
             <header className={`${robotoSlab.className} w-full py-6 px-10 md:py-6 md:px-30 lg:py-6 lg:px-35 flex items-center justify-between fixed top-0 left-0 ${isScrolled ? "bg-[#da291c]" : "bg-transparent"} font-bold backdrop-blur-md z-20 transform transition-all duration-300 ease-in-out ${isOpen ? "-translate-x-full" : "translate-x-0"}`}>
                 <Link href="/" className="flex items-baseline gap-4">
-                    <Logo className="text-[#ffc72c]" width={30} height={30} />
-                    <h1 className={`${bebasNeue.className} text-[#ffc72c] text-3xl sm:text-4xl`}>
+                    <Logo className="text-[#ffc72c] w-[30px] h-[30px] lg:w-40[px] lg:h-[40px]"  />
+                    <h1 className={`${bebasNeue.className} text-[#ffc72c] text-4xl sm:text-5xl`}>
                         PastaFiamma
                     </h1>
                 </Link>
 
-                <Link href={"/"} className={`hidden lg:flex justify-center items-center text-center px-5 py-2 border border-transparent rounded-2xl ${!isScrolled ? "hover:bg-white hover:border-white" : "hover:bg-[#da291c] hover:opacity-80 text-white"} transition-all duration-300 active:opacity-40 uppercase`}>Chi Siamo</Link>
-                <Link href={"/"} className={`hidden lg:flex justify-center items-center text-center px-5 py-2 border border-transparent rounded-2xl ${!isScrolled ? "hover:bg-white hover:border-white" : "hover:bg-[#da291c] hover:opacity-80 text-white"} transition-all duration-300 active:opacity-40 uppercase`}>Dove Siamo</Link>
-                <Link href={"/"} className={`hidden lg:flex justify-center items-center text-center px-5 py-2 border border-transparent rounded-2xl ${!isScrolled ? "hover:bg-white hover:border-white" : "hover:bg-[#da291c] hover:opacity-80 text-white"} transition-all duration-300 active:opacity-40 uppercase`}>contattaci</Link>
-                <Link href={"/"} className={`hidden lg:flex justify-center items-center text-center px-5 py-2 border ${isScrolled ? "bg-white border-[#da291c] hover:bg-[#da291c] hover:text-[#fff] " : "border-transparent hover:bg-white"} rounded-2xl transition-all duration-300 active:opacity-80 uppercase`}>menu</Link> {/* PROBABILMENTE DA SOSTITUIRE CON "CONTATTACI"      color porpora:  #610007*/}
+                <Link href={"/"} className={`hidden lg:flex justify-center items-center text-center text-xl px-5 py-2 border text-white border-transparent rounded-2xl ${!isScrolled ? "hover:opacity-70" : "hover:bg-[#da291c] hover:opacity-80"} transition-all duration-300 active:opacity-40 uppercase`}>Chi Siamo</Link>
+                <Link href={"/"} className={`hidden lg:flex justify-center items-center text-center text-xl px-5 py-2 border text-white border-transparent rounded-2xl ${!isScrolled ? "hover:opacity-70" : "hover:bg-[#da291c] hover:opacity-80"} transition-all duration-300 active:opacity-40 uppercase`}>Dove Siamo</Link>
+                <Link href={"/"} className={`hidden lg:flex justify-center items-center text-center text-xl px-5 py-2 border text-white border-transparent rounded-2xl ${!isScrolled ? "hover:opacity-70" : "hover:bg-[#da291c] hover:opacity-80"} transition-all duration-300 active:opacity-40 uppercase`}>contattaci</Link>
+                <Link href={"/"} className={`hidden lg:flex justify-center items-center text-center text-xl px-5 py-2 border ${isScrolled ? "bg-white border-[#da291c]  hover:bg-[#da291c] text-[#da291c] hover:text-[#fff] " : "border-transparent text-white hover:bg-white hover:text-[#da291c]"} rounded-2xl transition-all duration-300 active:opacity-80 uppercase`}>menu</Link> {/* PROBABILMENTE DA SOSTITUIRE CON "CONTATTACI"      color porpora:  #610007*/}
 
                 <button className="lg:hidden px-4" onClick={toggle}>
-                    <i className="fa-solid fa-bars text-2xl sm:text-3xl" />
+                    <i className={`fa-solid fa-bars text-2xl sm:text-3xl ${isScrolled ? "text-white" : "text-[#ccc]"}`} />
                 </button>
             </header>
 
             {/* Menu Mobile */}
             <div className={`${robotoSlab.className} text-[#da291c] py-6 px-6 sm:py-8 sm:px-12 fixed inset-0 bg-white flex flex-col gap-20 z-10 transform transition-transform duration-300 ease-in-out ${isOpen ? "-translate-x-0" : "translate-x-full"} font-semibold`}>
-                <button onClick={toggle} className="text-slate-500 self-end text-xl px-4 uppercase">
+                <button onClick={toggle} className="text-slate-500 self-end text-xl px-4 pt-2 uppercase">
                     Chiudi <i className="fa-regular fa-circle-xmark text-xl"/>
                 </button>
 
