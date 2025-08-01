@@ -53,7 +53,7 @@ function HeaderBar() {
             {/* Header principale */}
             <header className={`${robotoSlab.className} w-full py-6 px-10 md:py-6 md:px-30 lg:py-6 lg:px-30 flex items-center justify-between fixed top-0 left-0 ${isScrolled ? "bg-[#da291c]" : "bg-transparent"} font-bold backdrop-blur-md z-20 transform transition-all duration-300 ease-in-out ${isOpen ? "-translate-x-full" : "translate-x-0"}`}>
                 <Link href="/" className="flex items-baseline gap-4">
-                    <Logo className="text-[#ffc72c] w-[30px] h-[30px] lg:w-40[px] lg:h-[40px]"  />
+                    <Logo className="text-[#ffc72c] w-[30px] h-[30px] lg:w-[40px] lg:h-[40px]"  />
                     <h1 className={`${bebasNeue.className} text-[#ffc72c] text-4xl sm:text-5xl`}>
                         PastaFiamma
                     </h1>
@@ -62,7 +62,7 @@ function HeaderBar() {
                 <Link href={"/"} className={`hidden lg:flex justify-center items-center text-center text-xl px-5 py-2 border text-white border-transparent rounded-2xl ${!isScrolled ? "hover:opacity-70" : "hover:bg-[#da291c] hover:opacity-80"} transition-all duration-300 active:opacity-40 uppercase`}>Chi Siamo</Link>
                 <Link href={"/"} className={`hidden lg:flex justify-center items-center text-center text-xl px-5 py-2 border text-white border-transparent rounded-2xl ${!isScrolled ? "hover:opacity-70" : "hover:bg-[#da291c] hover:opacity-80"} transition-all duration-300 active:opacity-40 uppercase`}>Dove Siamo</Link>
                 <Link href={"/"} className={`hidden lg:flex justify-center items-center text-center text-xl px-5 py-2 border text-white border-transparent rounded-2xl ${!isScrolled ? "hover:opacity-70" : "hover:bg-[#da291c] hover:opacity-80"} transition-all duration-300 active:opacity-40 uppercase`}>contattaci</Link>
-                <Link href={"/"} className={`hidden lg:flex justify-center items-center text-center text-xl px-5 py-2 border ${isScrolled ? "bg-white border-[#da291c]  hover:bg-[#da291c] text-[#da291c] hover:text-[#fff] " : "border-transparent text-white hover:bg-white hover:text-[#da291c]"} rounded-2xl transition-all duration-300 active:opacity-80 uppercase`}>menu</Link> {/* PROBABILMENTE DA SOSTITUIRE CON "CONTATTACI"      color porpora:  #610007*/}
+                <Link href={"/"} className={`hidden lg:flex justify-center items-center text-center text-xl px-5 py-2 border ${isScrolled ? "bg-white border-[#da291c]  hover:bg-[#da291c] text-[#da291c] hover:text-[#fff] " : "border-transparent text-white hover:bg-white hover:text-[#da291c]"} rounded-2xl transition-all duration-300 active:opacity-80 uppercase`}>menu</Link> 
 
                 <button className="lg:hidden px-4" onClick={toggle}>
                     <i className={`fa-solid fa-bars text-2xl sm:text-3xl ${isScrolled ? "text-white" : "text-[#ccc]"}`} />
