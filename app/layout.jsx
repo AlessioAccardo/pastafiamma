@@ -1,7 +1,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import HeaderBar from "@/components/HeaderBar";
 import "./globals.css";
-import Logo from "@/components/Logo";
+import Footer from "@/components/Footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -31,6 +31,7 @@ export default function RootLayout({ children }) {
         {/* colore rosso : #da291c*/ }
         <HeaderBar />
         {children}
+        <Footer />        
       </body>
     </html>
   );

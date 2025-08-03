@@ -15,7 +15,7 @@ const p1 =
 
 function Hero() {
     return (
-        <div className={`${robotoSlab.className} flex flex-col w-full max-w-full justify-center items-center text-white text-lg`}>
+        <div className={`${robotoSlab.className} flex flex-col w-full max-w-full justify-center items-center text-white text-lg gap-20 lg:gap-25`}>
             <div className="hidden lg:flex flex-col relative w-full overflow-hidden min-h-screen justify-center items-center shadow-2xl">
                 <Image
                     src={"/busiate.jpg"}
@@ -43,12 +43,31 @@ function Hero() {
                 </div>                 
             </div>
             
-            <div className="flex flex-col w-full max-w-full mt-20 lg:mt-35 gap-30 lg:gap-25 justify-center items-center text-black text-center px-4 lg:px-10">
+            <div className="flex flex-col w-[90%] max-w-[90%] gap-30 lg:gap-25 justify-center items-center text-black text-center">
                 <HeroCard src={"/fiammaFoto.JPG"} selfImage={"lg:self-start"} pImage={"Chef Fiamma"} p={p1} width={"w-[40vh]"} flex={"lg:flex-row"}/>
 
                 <HeroCard src={"/pastaFresca_quadrata.jpg"} selfImage={"lg:self-start"} pImage={"La Nostra Pasta"} p={p1} width={"w-[35vh]"} height={"h-[27vh]"} flex={"lg:flex-row-reverse"} />
             </div>
 
+            <div className="flex w-[90%] max-w-[90%] text-black bg-[#ffc72c] py-4 px-6 lg:py-8 border-0 rounded-2xl">
+                <div className="flex flex-col w-[30%] max-w-[30%] justify-baseline items-center gap-2">
+                    <h1 className="uppercase text-4xl">dove siamo</h1>
+                    <div className="my-auto">
+                        <p>Ci troviamo in <strong>Via Magliocco, 58</strong>.</p>
+                        <p>Vieni a trovarci, ti aspettiamo!</p>
+                    </div>
+                </div>
+                <div className="w-[70%] max-w-[70%] min-h-[30vh]">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1569.407978245183!2d13.355273569677712!3d38.12121589824375!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1319ef5f02ac3149%3A0xa889ca2697864512!2sVia%20Generale%20Magliocco%2C%2058%2C%2090141%20Palermo%20PA!5e0!3m2!1sit!2sit!4v1753981830129!5m2!1sit!2sit"
+                        className="w-full h-full border-0 rounded-2xl shadow-2xl"
+                        allowFullScreen
+                        loading="lazy"
+                        referrerPolicy="no-referrer-when-downgrade"
+                        title="Mappa di Via Generale Magliocco, Palermo"
+                    />
+                </div>
+            </div>
         </div>
     );
 }
