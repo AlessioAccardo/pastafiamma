@@ -14,3 +14,7 @@ button {
 html, body {
   scroll-behavior: smooth;  
 }
+
+.shadoww {
+  box-shadow: 0px -5px 10px #FECACA;
+}

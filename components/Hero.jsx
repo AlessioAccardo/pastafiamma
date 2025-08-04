@@ -1,10 +1,5 @@
 import Image from "next/image";
-import { Roboto_Slab } from "next/font/google";
 import HeroCard from "./HeroCard";
-
-const robotoSlab = Roboto_Slab({
-    subsets: ['latin']
-})
 
 const p1 = 
             ` Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam et purus eros. Nunc vestibulum sodales auctor. Etiam finibus augue dui, at     consectetur magna fermentum a. Phasellus in eros eu dui rhoncus volutpat quis vitae metus. Suspendisse et erat in nisi vehicula sodales quis at ex. Etiam ut arcu non nisi dictum imperdiet vitae nec quam. Mauris sollicitudin sem vitae metus vestibulum fringilla.
@@ -15,7 +10,7 @@ const p1 =
 
 function Hero() {
     return (
-        <div className={`${robotoSlab.className} flex flex-col w-full max-w-full justify-center items-center text-white text-lg gap-20 lg:gap-25`}>
+        <div className="flex flex-col w-full max-w-full justify-center items-center text-white text-lg gap-20 lg:gap-25">
             <div className="hidden lg:flex flex-col relative w-full overflow-hidden min-h-screen justify-center items-center shadow-2xl">
                 <Image
                     src={"/busiate.jpg"}
@@ -53,7 +48,7 @@ function Hero() {
                 <div className="flex flex-col w-full max-w-full lg:w-[40%] lg:max-w-[40%] justify-baseline items-center gap-6 lg:gap-0">
                     <h1 className="uppercase text-4xl text-center pb-3 lg:pb-0">dove siamo</h1>
                     <div className="w-[80%] my-auto text-center">
-                        <p>Ci troviamo in <strong>Via Generale Magliocco, 58</strong>.</p>
+                        <p>Ci troviamo a Palermo in <strong>Via Generale Magliocco, 58</strong></p>
                         <p>Vieni a trovarci, ti aspettiamo!</p>
                         <hr className="my-6 lg:my-4" />
                         <p>Siamo aperti <strong>tutti i giorni</strong> dalle 12 alle 16 e dalle 18:30 alle 23 </p>
