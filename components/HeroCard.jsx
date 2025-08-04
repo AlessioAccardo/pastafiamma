@@ -10,9 +10,9 @@ function HeroCard(props) {
                     width={500}
                     height={500}
                     alt="chef pic"
-                    className={`${width} ${height} border-0 rounded-full ${selfImage}`}
+                    className={`${width} ${height} border-0 rounded-full ${selfImage} shadow-2xl`}
                 />
-                <p className="text-2xl">{pImage}</p>
+                <p className="text-3xl lg:text-4xl">{pImage}</p>
             </div>
             <div className="flex w-full self-center">
                 <p>{p}</p>
