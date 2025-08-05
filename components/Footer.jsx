@@ -23,14 +23,14 @@ function Footer() {
 
     return (
         <>
-            <footer className="flex flex-col justify-center items-center w-full mt-40 pt-8 pb-4 gap-12 text-lg bg-gradient-to-t from-[#da291c] to-red-200 border-0 shadoww">
-                <div className="flex flex-col flex-1 lg:flex-row justify-evenly items-center w-full gap-12">
+            <footer className="flex flex-col justify-center items-center w-full mt-40 pt-8 pb-4 gap-12 text-lg bg-gradient-to-t from-[#ffc72c] to-[#da291c] border-0 shadoww">
+                <div className="flex flex-col flex-1 lg:flex-row justify-evenly items-center w-full gap-20 lg:gap-12">
                     <div className="flex flex-col gap-2 lg:gap-3 items-center lg:items-start justify-center">
-                        <div className={`${bebasNeue.className} flex gap-2 items-baseline`}>
-                            <Logo className="text-yellow-500 w-[25px] h-[25px] lg:w-[30px] lg:h-[30px]" />
+                        <div className={`${bebasNeue.className} flex gap-2 items-baseline text-[#ffc72c]`}>
+                            <Logo className="w-[25px] h-[25px] lg:w-[30px] lg:h-[30px]" />
                             <h1 className="uppercase text-3xl">pastafiamma</h1>
                         </div>
-                        <p>Via Generale Magliocco, 58</p>
+                        <a href="https://www.google.com/maps/place/Via+Generale+Magliocco,+58,+90141+Palermo+PA/@38.121216,13.355917,16z/data=!4m6!3m5!1s0x1319ef5f02ac3149:0xa889ca2697864512!8m2!3d38.1212159!4d13.3559173!16s%2Fg%2F11q2nch5xp?hl=it&entry=ttu&g_ep=EgoyMDI1MDczMC4wIKXMDSoASAFQAw%3D%3D" target="_blank" className="hover:opacity-70 active:opacity-40 transition-opacity duration-300">Via Generale Magliocco, 58</a>
                         <p>90141, Palermo</p>
                         <p>P. IVA numeropartitaiva</p>
                         <p>Tel: <a className="underline cursor-pointer active:opacity-40 transition-opacity duration-300" onClick={() => { call(number) }}>+393665029938</a></p>
@@ -82,7 +82,7 @@ function Footer() {
                             width={80}
                             height={80}
                             alt="logo creatore web"
-                            className="border-0 rounded-full"
+                            className="w-[120px] lg:w-[80px] border-0 rounded-full"
                         />
                     </div>
                 </div>
