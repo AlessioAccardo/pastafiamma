@@ -76,14 +76,16 @@ function Footer() {
                         <a href="" className="cursor-pointer transition-opacity duration-300 hover:opacity-70 active:opacity-40">Lavora Con Noi</a>
                     </div>
                     <div className="flex flex-col gap-2 items-center justify-center relative cursor-pointer">
-                        <p>Creato da</p>
-                        <Image
-                            src={"/mio_logo.webp"}
-                            width={80}
-                            height={80}
-                            alt="logo creatore web"
-                            className="w-[120px] lg:w-[80px] border-0 rounded-full"
-                        />
+                        <a href="https://www.instagram.com/infinitytecnologyy/" target="_blank">
+                            <p>Creato da</p>
+                            <Image
+                                src={"/mio_logo.webp"}
+                                width={80}
+                                height={80}
+                                alt="logo creatore web"
+                                className="w-[120px] lg:w-[80px] border-0 rounded-full"
+                            />
+                        </a>
                     </div>
                 </div>
                 <div className="flex items-center justify-center">
