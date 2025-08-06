@@ -1,5 +1,17 @@
 import Image from "next/image";
 import HeroCard from "./HeroCard";
+import { Bebas_Neue, Permanent_Marker } from "next/font/google";
+
+
+const bebasNeue = Bebas_Neue({
+    weight: "400",
+    subsets: ['latin']
+});
+
+const permanentMarker = Permanent_Marker({
+    subsets: ["latin"],
+    weight: "400"
+});
 
 const p1 = 
             ` Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam et purus eros. Nunc vestibulum sodales auctor. Etiam finibus augue dui, at     consectetur magna fermentum a. Phasellus in eros eu dui rhoncus volutpat quis vitae metus. Suspendisse et erat in nisi vehicula sodales quis at ex. Etiam ut arcu non nisi dictum imperdiet vitae nec quam. Mauris sollicitudin sem vitae metus vestibulum fringilla.
@@ -10,7 +22,7 @@ const p1 =
 
 function Hero() {
     return (
-        <div className="flex flex-col w-full max-w-full justify-center items-center text-white text-lg gap-20 lg:gap-25">
+        <div className="flex flex-col w-full max-w-full justify-center items-center text-white text-lg gap-20 lg:gap-25 pb-20">
             <div className="hidden lg:flex flex-col relative w-full overflow-hidden min-h-screen justify-center items-center shadow-2xl">
                 <Image
                     src={"/busiate.jpg"}
@@ -20,8 +32,8 @@ function Hero() {
                 />  
             
                 <div className="w-full max-w-full flex flex-col justify-center items-center text-center absolute z-2 text-6xl ">
-                    <p className="text-[#ffc72c]">PASTAFIAMMA</p>
-                    <p>Preparata da noi con <span className="text-[#da291c] font-extrabold">amore</span> ogni giorno</p>
+                    <p className={`text-[#ffc72c] ${bebasNeue.className} text-9xl`}>PASTAFIAMMA</p>
+                    <p className={`${permanentMarker.className} text-7xl`}>Preparata da noi con <span className="text-[#da291c] font-extrabold">amore</span> ogni giorno</p>
                 </div>                
             </div>
 
@@ -32,9 +44,9 @@ function Hero() {
                     className="object-cover z-1 brightness-60"
                     alt="pasta image"
                 />
-                <div className="w-full max-w-full flex flex-col justify-center items-center text-center absolute z-2 text-4xl ">
-                    <p className="text-[#ffc72c]">PASTAFIAMMA</p>
-                    <p>Preparata da noi con <span className="text-[#da291c] font-extrabold">amore</span> ogni giorno</p>
+                <div className="w-full max-w-full flex flex-col justify-center items-center text-center absolute z-2 text-4xl px-4">
+                    <p className={`text-[#ffc72c] ${bebasNeue.className} text-6xl`}>PASTAFIAMMA</p>
+                    <p className={`${permanentMarker.className} text-4xl`}>Preparata da noi con <span className="text-[#da291c] font-extrabold">amore</span> ogni giorno</p>
                 </div>                 
             </div>
             
