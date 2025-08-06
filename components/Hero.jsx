@@ -33,7 +33,7 @@ function Hero() {
             
                 <div className="w-full max-w-full flex flex-col justify-center items-center text-center absolute z-2 text-6xl ">
                     <p className={`text-[#ffc72c] ${bebasNeue.className} text-9xl`}>PASTAFIAMMA</p>
-                    <p className={`${permanentMarker.className} text-7xl`}>Preparata da noi con <span className="text-[#da291c] font-extrabold">amore</span> ogni giorno</p>
+                    <p className={`${permanentMarker.className} text-7xl px-6`}>Preparata da noi con <span className="text-[#da291c] font-extrabold">amore</span> ogni giorno</p>
                 </div>                
             </div>
 
@@ -57,7 +57,7 @@ function Hero() {
             </div>
 
             <div id="dove" className="flex flex-col lg:flex-row w-[90%] max-w-[90%] text-black bg-[#ffc72c] py-4 px-6 lg:py-8 border-0 rounded-2xl scroll-mt-[7rem] text-2xl gap-6 lg:gap-0">
-                <div className="flex flex-col w-full max-w-full lg:w-[40%] lg:max-w-[40%] justify-baseline items-center gap-6 lg:gap-0">
+                <div className="flex flex-col w-full max-w-full lg:w-[40%] lg:max-w-[40%] justify-baseline items-center gap-6">
                     <h1 className="uppercase text-4xl text-center pb-3 lg:pb-0">dove siamo</h1>
                     <div className="w-[80%] my-auto text-center">
                         <p>Ci troviamo a Palermo in <strong>Via Generale Magliocco, 58</strong></p>

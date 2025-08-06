@@ -23,35 +23,35 @@ const bebasNeue = Bebas_Neue({
 function Menu() {
 
     const tipoPastaData = [
-        {name: "Classica", description: "Farina 0 di Grano Duro", price: 0, imgPath: "/busiate-classiche.jpg"},
-        {name: "Integrale", description: "Perciasacchi", price: 0.70, imgPath: "/busiate-integrale.jpg"},
-        {name: "Gluten Free", description: "Senza Glutine", price: 1, imgPath: "/busiate-gluten-free.jpg"}
+        { name: "Classica", description: "Farina 0 di Grano Duro", price: 0, imgPath: "/busiate-classiche.png" },
+        { name: "Integrale", description: "Perciasacchi", price: 0.70, imgPath: "/busiate-integrali.png" },
+        { name: "Gluten Free", description: "Senza Glutine", price: 1, imgPath: "/busiate-gluten-free.png" }
     ];
 
     const formatoPastaData = [
-        {name: "Busiate", imgPath: "/fresche-busiate.jpg"},
-        {name: "Strozzapreti", imgPath: "/fresche-strozzapreti.jpg"},
-        {name: "Linguine", imgPath: "/fresche-linguine.jpg"},
-        {name: "Spaghetti Grossi", imgPath: "/fresche-spaghetti.jpg"},
+        { name: "Busiate", imgPath: "/fresche-busiate.jpg" },
+        { name: "Strozzapreti", imgPath: "/fresche-strozzapreti.jpg" },
+        { name: "Linguine", imgPath: "/fresche-linguine.jpg" },
+        { name: "Spaghetti Grossi", imgPath: "/fresche-spaghetti.jpg" },
     ]
-    
+
     const condimentiData = [
-        {name: "Norma", ingridients: "Passata di pomodoro, Melenzane Fritte, Ricotta Salata, Basilico", price: 12, imgPath: "/norma.jpg"},
-        {name: "Trapanese", ingridients: "Passata di pomodoro, Melenzane Fritte, Ricotta Salata, Basilico", price: 10, imgPath: "/trapanese.jpg"},
-        {name: "Bronte Mare", ingridients: "Passata di pomodoro, Melenzane Fritte, Ricotta Salata, Basilico", price: 15, imgPath: "/bronte-mare.jpg"},
-        {name: "Palermitana", ingridients: "Passata di pomodoro, Melenzane Fritte, Ricotta Salata, Basilico", price: 10, imgPath: "palermitana.jpg"},
-        {name: "Nebrodi", ingridients: "Passata di pomodoro, Melenzane Fritte, Ricotta Salata, Basilico", price: 18, imgPath: "/nebrodi.jpg"},
-        {name: "Cacchio", ingridients: "Passata di pomodoro, Melenzane Fritte, Ricotta Salata, Basilico", price: 16, imgPath: "/cacchio.jpg"},
+        { name: "Norma", ingridients: "Passata di pomodoro, Melenzane Fritte, Ricotta Salata, Basilico", price: 12, imgPath: "/norma.jpg" },
+        { name: "Trapanese", ingridients: "Passata di pomodoro, Melenzane Fritte, Ricotta Salata, Basilico", price: 10, imgPath: "/trapanese.jpg" },
+        { name: "Bronte Mare", ingridients: "Passata di pomodoro, Melenzane Fritte, Ricotta Salata, Basilico", price: 15, imgPath: "/bronte-mare.jpg" },
+        { name: "Palermitana", ingridients: "Passata di pomodoro, Melenzane Fritte, Ricotta Salata, Basilico", price: 10, imgPath: "palermitana.jpg" },
+        { name: "Nebrodi", ingridients: "Passata di pomodoro, Melenzane Fritte, Ricotta Salata, Basilico", price: 18, imgPath: "/nebrodi.jpg" },
+        { name: "Cacchio", ingridients: "Passata di pomodoro, Melenzane Fritte, Ricotta Salata, Basilico", price: 16, imgPath: "/cacchio.jpg" },
 
     ]
-    
+
     const extraData = [
-        {name: "Mandorle Tostate", price: 0.70, imgPath: "/mandorle-tostate.jpg"},
-        {name: "Granella di Pistacchio", price: 0.90, imgPath: "/pistacchio.jpg"},
-        {name: "Melenzane Fritte", price: 0.70, imgPath: "/melenzane.jpg"},
-        {name: "Guanciale Croccante", price: 1.20, imgPath: "/guanciale.jpg"},
-        {name: "Burrata", price: 1.50, imgPath: "/burrata.jpg"},
-        {name: "Olio Al Tartufo", price: 1.20, imgPath: "/olio-tartufo.jpg"}
+        { name: "Mandorle Tostate", price: 0.70, imgPath: "/mandorle-tostate.jpg" },
+        { name: "Granella di Pistacchio", price: 0.90, imgPath: "/pistacchio.jpg" },
+        { name: "Melenzane Fritte", price: 0.70, imgPath: "/melenzane.jpg" },
+        { name: "Guanciale Croccante", price: 1.20, imgPath: "/guanciale.jpg" },
+        { name: "Burrata", price: 1.50, imgPath: "/burrata.jpg" },
+        { name: "Olio Al Tartufo", price: 1.20, imgPath: "/olio-tartufo.jpg" }
     ];
 
 
@@ -60,45 +60,54 @@ function Menu() {
     const [isCondimentoPastaSelected, setIsCondimentoPastaSelected] = useState(false);
 
 
-    return ( 
-        <div className="flex flex-col w-full max-w-full justify-center items-center text-black text-lg bg-[#ffc72c]">
+    return (
+        <div className="flex flex-col w-full max-w-full justify-center items-center text-black text-lg bg-[#FAF9F6]">
             <div className="hidden lg:flex flex-col relative w-full overflow-hidden text-white min-h-screen justify-center items-center shadow-2xl">
                 <Image
                     src={"/busiate.jpg"}
                     fill={true}
                     className="object-cover z-1 brightness-60"
                     alt="pasta image"
-                />  
-            
+                />
+
                 <div className="w-full max-w-full flex flex-col justify-center items-center text-center absolute z-2 text-6xl gap-5">
                     <p className={`text-[#ffc72c] ${bebasNeue.className} text-9xl`}>PASTAFIAMMA</p>
                     <p className={`${permanentMarker.className} text-7xl`}>Il nostro Menu</p>
-                </div>                
+                </div>
             </div>
-            <div className="flex flex-col text-center text-2xl w-full max-w-[90%] items-center justify-center bg-[#FAF9F6] my-10 mx-auto border-0 rounded-4xl gap-10 pt-6 lg:pt-8 pb-20">
+            <div className="flex flex-col text-center text-2xl w-full max-w-full items-center justify-center bg-transparent my-10 mx-auto border-0 rounded-4xl gap-10 pt-6 lg:pt-8 pb-20">
                 <h1 className={`${permanentMarker.className} uppercase text-7xl py-10 text-shadow-md`}>Componi la tua pasta</h1>
                 <h1 className="uppercase text-3xl">Scegli il tipo</h1>
-                <div className="flex flex-wrap items-center justify-evenly w-full max-w-[100%] px-6">
+                <div className="flex flex-wrap items-center justify-evenly w-full max-w-full px-6">
                     {tipoPastaData.map((tipoPasta, tipoPastaIndex) => {
                         const isSelected = tipoPastaIndex === isTipoPastaSelected;
                         return (
-                            <div key={tipoPastaIndex} className={`${isSelected ? "bg-white" : ""} cursor-pointer flex flex-col justify-center items-center gap-4 relative w-full max-w-[25%] h-full max-h-full active:opacity-80 transition-all duration-300 py-15 border-0 rounded-4xl shadow-2xs`} onClick={() => {
+                            <div key={tipoPastaIndex} className={`${isSelected ? "bg-white" : ""} cursor-pointer flex flex-col justify-center items-center gap-10 relative w-full max-w-[25%] h-full max-h-full active:opacity-80 transition-all duration-300 border-0 rounded-4xl shadow-2xs px-2 py-4`} onClick={() => {
                                 setIsTipoPastaSelected(prev => (prev === tipoPastaIndex ? null : tipoPastaIndex));
                             }}>
-                                <h2>{tipoPasta.name}</h2>
+                                <h2 className="mb-2">{tipoPasta.name}</h2>
                                 {isSelected && (
-                                    <span className="absolute top-2 right-2 z-1 text-3xl">
-                                        <i className="fa-regular fa-circle-check"/>
+                                    <span className="absolute top-2 right-2 z-4 text-3xl">
+                                        <i className="fa-regular fa-circle-check" />
                                     </span>
                                 )}
-                                <Image 
-                                    src={tipoPasta.imgPath}
-                                    width={150}
-                                    height={150}
-                                    alt={tipoPasta.name}
-                                    className="border-0 rounded-full"
-                                />
-                                <p>{tipoPasta.description} (+{(tipoPasta.price === 0 ? tipoPasta.price : (tipoPasta.price).toFixed(2))}€)</p>
+                                <div className="relative flex items-center justify-center w-full h-fit max-h-fit flex-1">
+                                    <Image
+                                        src="/piatti/piatto5.png"
+                                        width={200}
+                                        height={200}
+                                        alt="piatto"
+                                        className="absolute z-2 inset-0 m-auto"
+                                    />
+                                    <Image
+                                        src={tipoPasta.imgPath}
+                                        width={150}
+                                        height={150}
+                                        alt={tipoPasta.name}
+                                        className="relative z-3 border-0 rounded-full"
+                                    />
+                                </div>
+                                <p className="mt-2">{tipoPasta.description} (+{(tipoPasta.price === 0 ? tipoPasta.price : (tipoPasta.price).toFixed(2))}€)</p>
                             </div>
                         )
                     })}
@@ -114,11 +123,11 @@ function Menu() {
                                 <h2>{formato.name}</h2>
                                 {isSelected && (
                                     <span className="absolute top-2 right-2 z-1 text-3xl">
-                                        <i className="fa-regular fa-circle-check"/>
+                                        <i className="fa-regular fa-circle-check" />
                                     </span>
                                 )}
                                 <div className="w-[150px] h-[150px] relative">
-                                    <Image 
+                                    <Image
                                         src={formato.imgPath}
                                         width={150}
                                         height={150}
