@@ -2,18 +2,14 @@
 
 import Image from "next/image";
 import { useState } from "react";
-import { Playwrite_AU_QLD, Permanent_Marker, Bebas_Neue } from "next/font/google";
+import { Permanent_Marker, Bebas_Neue } from "next/font/google";
+import MenuCard from "./MenuCard";
 
 const permanentMarker = Permanent_Marker({
     subsets: ["latin"],
     weight: "400"
 });
-
-const playwrite = Playwrite_AU_QLD({
-    subsets: ["latin"]
-});
-
-
+``
 const bebasNeue = Bebas_Neue({
     weight: "400",
     subsets: ['latin']
@@ -29,39 +25,41 @@ function Menu() {
     ];
 
     const formatoPastaData = [
-        { name: "Busiate", imgPath: "/fresche-busiate.jpg" },
-        { name: "Strozzapreti", imgPath: "/fresche-strozzapreti.jpg" },
-        { name: "Linguine", imgPath: "/fresche-linguine.jpg" },
-        { name: "Spaghetti Grossi", imgPath: "/fresche-spaghetti.jpg" },
+        { name: "Busiate", imgPath: "/fresche-busiate.png" },
+        { name: "Strozzapreti", imgPath: "/fresche-strozzapreti.png" },
+        { name: "Linguine", imgPath: "/fresche-linguine.png" },
+        { name: "Spaghetti Grossi", imgPath: "/fresche-spaghetti.png" },
     ]
 
     const condimentiData = [
-        { name: "Norma", ingridients: "Passata di pomodoro, Melenzane Fritte, Ricotta Salata, Basilico", price: 12, imgPath: "/norma.jpg" },
-        { name: "Trapanese", ingridients: "Passata di pomodoro, Melenzane Fritte, Ricotta Salata, Basilico", price: 10, imgPath: "/trapanese.jpg" },
-        { name: "Bronte Mare", ingridients: "Passata di pomodoro, Melenzane Fritte, Ricotta Salata, Basilico", price: 15, imgPath: "/bronte-mare.jpg" },
-        { name: "Palermitana", ingridients: "Passata di pomodoro, Melenzane Fritte, Ricotta Salata, Basilico", price: 10, imgPath: "palermitana.jpg" },
-        { name: "Nebrodi", ingridients: "Passata di pomodoro, Melenzane Fritte, Ricotta Salata, Basilico", price: 18, imgPath: "/nebrodi.jpg" },
-        { name: "Cacchio", ingridients: "Passata di pomodoro, Melenzane Fritte, Ricotta Salata, Basilico", price: 16, imgPath: "/cacchio.jpg" },
+        { name: "Norma", description: "Passata di pomodoro, Melenzane Fritte, Ricotta Salata, Basilico", price: 12, imgPath: "/norma.png" },
+        { name: "Trapanese", description: "Passata di pomodoro, Melenzane Fritte, Ricotta Salata, Basilico", price: 10, imgPath: "/trapanese.png" },
+        { name: "Bronte Mare", description: "Passata di pomodoro, Melenzane Fritte, Ricotta Salata, Basilico", price: 15, imgPath: "/bronte-mare.png" },
+        { name: "Palermitana", description: "Passata di pomodoro, Melenzane Fritte, Ricotta Salata, Basilico", price: 10, imgPath: "/palermitana.png" },
+        { name: "Nebrodi", description: "Passata di pomodoro, Melenzane Fritte, Ricotta Salata, Basilico", price: 18, imgPath: "/nebrodi.png" },
+        { name: "Cacchio", description: "Passata di pomodoro, Melenzane Fritte, Ricotta Salata, Basilico", price: 16, imgPath: "/cacchio.png" },
 
     ]
 
     const extraData = [
-        { name: "Mandorle Tostate", price: 0.70, imgPath: "/mandorle-tostate.jpg" },
-        { name: "Granella di Pistacchio", price: 0.90, imgPath: "/pistacchio.jpg" },
-        { name: "Melenzane Fritte", price: 0.70, imgPath: "/melenzane.jpg" },
-        { name: "Guanciale Croccante", price: 1.20, imgPath: "/guanciale.jpg" },
-        { name: "Burrata", price: 1.50, imgPath: "/burrata.jpg" },
-        { name: "Olio Al Tartufo", price: 1.20, imgPath: "/olio-tartufo.jpg" }
+        { name: "Mandorle Tostate", price: 0.70, imgPath: "/mandorle-tostate.png" },
+        { name: "Granella di Pistacchio", price: 0.90, imgPath: "/pistacchio.png" },
+        { name: "Melenzane Fritte", price: 0.70, imgPath: "/melenzane.png" },
+        { name: "Guanciale Croccante", price: 1.20, imgPath: "/guanciale.png" },
+        { name: "Burrata", price: 1.50, imgPath: "/burrata.png" },
+        { name: "Olio Al Tartufo", price: 1.20, imgPath: "/olio-tartufo.png" }
     ];
 
 
     const [isTipoPastaSelected, setIsTipoPastaSelected] = useState(null);
-    const [isFormatoPastaSelected, setIsFormatoPastaSelected] = useState(false);
-    const [isCondimentoPastaSelected, setIsCondimentoPastaSelected] = useState(false);
+    const [isFormatoPastaSelected, setIsFormatoPastaSelected] = useState(null);
+    const [isCondimentoPastaSelected, setIsCondimentoPastaSelected] = useState(null);
+    const [isExtraSelected, setIsExtraSelected] = useState(null);
+    const [totalCost, setTotalCost] = useState(0);
 
 
     return (
-        <div className="flex flex-col w-full max-w-full justify-center items-center text-black text-lg bg-[#FAF9F6]">
+        <div className="flex flex-col w-full max-w-full justify-center items-center text-black text-lg bg-white">
             <div className="hidden lg:flex flex-col relative w-full overflow-hidden text-white min-h-screen justify-center items-center shadow-2xl">
                 <Image
                     src={"/busiate.jpg"}
@@ -77,68 +75,50 @@ function Menu() {
             </div>
             <div className="flex flex-col text-center text-2xl w-full max-w-full items-center justify-center bg-transparent my-10 mx-auto border-0 rounded-4xl gap-10 pt-6 lg:pt-8 pb-20">
                 <h1 className={`${permanentMarker.className} uppercase text-7xl py-10 text-shadow-md`}>Componi la tua pasta</h1>
-                <h1 className="uppercase text-3xl">Scegli il tipo</h1>
-                <div className="flex flex-wrap items-center justify-evenly w-full max-w-full px-6">
-                    {tipoPastaData.map((tipoPasta, tipoPastaIndex) => {
-                        const isSelected = tipoPastaIndex === isTipoPastaSelected;
-                        return (
-                            <div key={tipoPastaIndex} className={`${isSelected ? "bg-white" : ""} cursor-pointer flex flex-col justify-center items-center gap-10 relative w-full max-w-[25%] h-full max-h-full active:opacity-80 transition-all duration-300 border-0 rounded-4xl shadow-2xs px-2 py-4`} onClick={() => {
-                                setIsTipoPastaSelected(prev => (prev === tipoPastaIndex ? null : tipoPastaIndex));
-                            }}>
-                                <h2 className="mb-2">{tipoPasta.name}</h2>
-                                {isSelected && (
-                                    <span className="absolute top-2 right-2 z-4 text-3xl">
-                                        <i className="fa-regular fa-circle-check" />
-                                    </span>
-                                )}
-                                <div className="relative flex items-center justify-center w-full h-fit max-h-fit flex-1">
-                                    <Image
-                                        src="/piatti/piatto5.png"
-                                        width={200}
-                                        height={200}
-                                        alt="piatto"
-                                        className="absolute z-2 inset-0 m-auto"
-                                    />
-                                    <Image
-                                        src={tipoPasta.imgPath}
-                                        width={150}
-                                        height={150}
-                                        alt={tipoPasta.name}
-                                        className="relative z-3 border-0 rounded-full"
-                                    />
-                                </div>
-                                <p className="mt-2">{tipoPasta.description} (+{(tipoPasta.price === 0 ? tipoPasta.price : (tipoPasta.price).toFixed(2))}€)</p>
-                            </div>
-                        )
-                    })}
-                </div>
-                <h1 className="uppercase text-3xl mt-20">Scegli il formato della tua pasta</h1>
-                <div className="flex flex-wrap items-center justify-evenly w-full max-w-full px-6 gap-4">
-                    {formatoPastaData.map((formato, formatoIndex) => {
-                        const isSelected = formatoIndex === isFormatoPastaSelected;
-                        return (
-                            <div key={formatoIndex} className={`${isSelected ? "bg-white" : ""} cursor-pointer flex flex-col justify-center items-center gap-4 relative w-full max-w-[25%] h-full max-h-full active:opacity-80 transition-all duration-300 py-15 border-0 rounded-4xl shadow-2xs`} onClick={() => {
-                                setIsFormatoPastaSelected(prev => (prev === formatoIndex ? null : formatoIndex));
-                            }}>
-                                <h2>{formato.name}</h2>
-                                {isSelected && (
-                                    <span className="absolute top-2 right-2 z-1 text-3xl">
-                                        <i className="fa-regular fa-circle-check" />
-                                    </span>
-                                )}
-                                <div className="w-[150px] h-[150px] relative">
-                                    <Image
-                                        src={formato.imgPath}
-                                        width={150}
-                                        height={150}
-                                        alt={formato.name}
-                                        className="border-0 rounded-full"
-                                    />
-                                </div>
-                            </div>
-                        )
-                    })}
-                </div>
+                <MenuCard
+                    title={"Scegli il tipo"}
+                    state={isTipoPastaSelected}
+                    setState={setIsTipoPastaSelected}
+                    data={tipoPastaData}
+                    widthImg1={200}
+                    heightImg1={200}
+                    widthImg2={180}
+                    heightImg2={180}
+                    imgPiatto={"piatto5"}
+                />
+                <MenuCard 
+                    title={"Scegli il formato"}
+                    state={isFormatoPastaSelected}
+                    setState={setIsFormatoPastaSelected}
+                    data={formatoPastaData}
+                    widthImg1={200}
+                    heightImg1={200}
+                    widthImg2={180}
+                    heightImg2={180}
+                    imgPiatto={"piatto4"}
+                />
+                <MenuCard 
+                    title={"Scegli il condimento"}
+                    state={isCondimentoPastaSelected}
+                    setState={setIsCondimentoPastaSelected}
+                    data={condimentiData}
+                    widthImg1={230}
+                    heightImg1={230}
+                    widthImg2={120}
+                    heightImg2={120}
+                    imgPiatto={"piatto6"}
+                />
+                <MenuCard 
+                    title={"Scegli gli extra"}
+                    state={isExtraSelected}
+                    setState={setIsExtraSelected}
+                    data={extraData}
+                    widthImg1={200}
+                    heightImg1={200}
+                    widthImg2={180}
+                    heightImg2={180}
+                    imgPiatto={"piatto4"}
+                />
             </div>
         </div>
     );
