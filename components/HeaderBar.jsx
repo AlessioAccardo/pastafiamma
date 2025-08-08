@@ -71,7 +71,8 @@ function HeaderBar() {
                 </button>
 
                 <nav className="flex flex-col items-end-safe gap-6 px-10">
-                    <Link href={"/menu"} className="transition-opacity duration-100 ease-in-out active:opacity-20 text-2xl uppercase">Menu</Link>
+                    <Link href={"/menu"} onClick={toggle} className="transition-opacity duration-100 ease-in-out active:opacity-20 text-2xl uppercase">Menu</Link>
+                    <Link href={"/"} onClick={toggle} className="transition-opacity duration-100 ease-in-out active:opacity-20 text-2xl uppercase">Home</Link>
                     <Link href="" className="transition-opacity duration-100 ease-in-out active:opacity-20 text-2xl uppercase" onClick={() => {
                         toggle();
                         call(number);

@@ -5,7 +5,7 @@ function MenuCard(props) {
     const { title, state, setState, data, widthImg1, heightImg1, widthImg2, heightImg2, imgPiatto } = props;
 
     return (
-        <div className="flex flex-col w-full justify-center items-center gap-5 py-4">
+        <div className="flex flex-col w-full justify-center items-center gap-5 py-10">
             <h1 className="uppercase text-3xl">{title}</h1>
             <div className="flex flex-wrap items-center justify-evenly w-full max-w-full px-6 gap-5">
                 {data.map((element, elementIndex) => {
