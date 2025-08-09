@@ -101,8 +101,20 @@ function Menu() {
                     <p className={`${permanentMarker.className} text-7xl`}>Il nostro Menu</p>
                 </div>
             </div>
-            <div className="flex flex-col text-center text-2xl w-full max-w-full items-center justify-center bg-transparent my-10 mx-auto border-0 rounded-4xl gap-10 pt-6 lg:pt-8 pb-20">
-                <h1 className={`${permanentMarker.className} uppercase text-7xl py-10 text-shadow-md`}>Componi la tua pasta</h1>
+            <div className="flex flex-col relative w-full overflow-hidden min-h-screen justify-center items-center lg:hidden shadow-2xl">
+                <Image
+                    src={"/busiate_mobile.jpg"}
+                    fill={true}
+                    className="object-cover z-1 brightness-60"
+                    alt="pasta image"
+                />
+                <div className="w-full max-w-full flex flex-col justify-center items-center text-center text-white absolute z-2 px-4">
+                    <p className={`text-[#ffc72c] ${bebasNeue.className} text-7xl md:text-9xl`}>PASTAFIAMMA</p>
+                    <p className={`${permanentMarker.className} text-4xl md:text-6xl uppercase`}>il nostro menu</p>
+                </div>                 
+            </div>
+            <div className="flex flex-col text-center text-2xl w-full max-w-full items-center justify-center bg-transparent my-10 mx-auto border-0 rounded-4xl gap-10 pt-6 lg:pt-8 lg:pb-20">
+                <h1 className={`${permanentMarker.className} uppercase text-4xl md:text-5xl lg:text-7xl lg:py-10 text-shadow-md`}>Componi la tua pasta</h1>
                 <MenuCard
                     title={"Scegli il tipo"}
                     state={isTipoPastaSelected}
@@ -138,6 +150,7 @@ function Menu() {
                     heightImg2={120}
                     imgPiatto={"piatto6"}
                     setTotalCost={setTotalCost}
+                    long={true}
                 />
                 <MenuCard 
                     title={"Scegli gli extra"}
@@ -153,9 +166,17 @@ function Menu() {
                 />
             </div>
             { show && (
-                <div className="bg-[#ffc72c] text-white flex justify-center items-center sticky bottom-4 w-full max-w-[85%] px-6 py-3 z-4 mb-6 border-0 rounded-2xl text-3xl gap-2">
-                    <p>Totale</p>
-                    <p>{totalCost}€</p>
+                <div className="bg-[#ffc72c] text-white flex items-center sticky bottom-4 w-full max-w-[85%] px-6 py-2 lg:py-3 z-4 mb-6 border-0 rounded-2xl text-3xl lg:max-w-[50%]">
+                    <div className="flex gap-2 w-full max-w-[75%] justify-center items-center">
+                        <p>Totale</p>
+                        <p>{totalCost}€</p>
+                    </div>
+                    <div className="flex flex-col justify-center items-center cursor-pointer" onClick={() => {
+                        setTotalCost(0);
+                    }}>
+                        <i className="fa-solid fa-recycle hidden md:block"/>
+                        <p className="uppercase text-2xl">reset</p>
+                    </div>
                 </div>
             )}
         </div>

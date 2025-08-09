@@ -19,8 +19,8 @@ function Footer() {
 
     return (
         <>
-            <footer className="flex flex-col justify-center items-center text-center w-full pt-8 pb-4 gap-12 text-lg bg-gradient-to-t from-[#ffc72c] to-[#da291c] border-0 shadoww">
-                <div className="flex flex-col flex-1 lg:flex-row justify-evenly items-center w-full gap-20 lg:gap-12">
+            <footer className="flex flex-col justify-center items-center text-center w-full pt-8 pb-4 gap-12 text-lg bg-gradient-to-t from-[#ffc72c] to-[#da291c] border-0 shadoww md:px-10">
+                <div className="flex flex-col flex-1 md:flex-row justify-evenly items-center w-full gap-20 lg:gap-12">
                     <div className="flex flex-col gap-2 lg:gap-3 items-center lg:items-start justify-center">
                         <div className={`${bebasNeue.className} flex gap-2 items-baseline text-[#ffc72c]`}>
                             <Logo className="w-[25px] h-[25px] lg:w-[30px] lg:h-[30px]" />

@@ -2,7 +2,7 @@ import Image from "next/image";
 
 function MenuCard(props) {
     
-    const { title, state, setState, data, widthImg1, heightImg1, widthImg2, heightImg2, imgPiatto, setTotalCost } = props;
+    const { title, state, setState, data, widthImg1, heightImg1, widthImg2, heightImg2, imgPiatto, setTotalCost, long } = props;
 
 
     const handleClick = (element, elementIndex) => {
@@ -34,12 +34,12 @@ function MenuCard(props) {
 
     return (
         <div className="flex flex-col w-full justify-center items-center gap-5 py-10">
-            <h1 className="uppercase text-3xl">{title}</h1>
-            <div className="flex flex-wrap items-center justify-evenly w-full max-w-full px-6 gap-5">
+            <h1 className="uppercase text-2xl md:text-3xl">{title}</h1>
+            <div className="flex flex-col lg:flex-row flex-wrap items-center justify-evenly w-full max-w-full px-6 gap-10 md:text-3xl">
                 {data.map((element, elementIndex) => {
                     const isSelected = elementIndex === state;
                     return (
-                        <div key={elementIndex} className={`${isSelected ? "bg-[#da291c] text-white" : ""} cursor-pointer flex flex-col justify-center items-center gap-10 relative w-full max-w-[25%] h-[25rem] active:opacity-80 transition-all duration-300 py-4 border-0 rounded-4xl shadow-2xs`} onClick={() => {
+                        <div key={elementIndex} className={`${isSelected ? "bg-[#da291c] text-white" : ""} cursor-pointer flex flex-col justify-center items-center gap-10 relative w-full max-w-[90%] lg:max-w-[25%] h-[25rem] active:opacity-80 transition-all duration-300 py-4 border-0 rounded-4xl shadow-2xs`} onClick={() => {
                             handleClick(element, elementIndex);
                         }}>
                             <h2 className="mb-2">{element.name}</h2>

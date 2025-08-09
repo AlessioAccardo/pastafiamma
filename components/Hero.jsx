@@ -45,8 +45,8 @@ function Hero() {
                     alt="pasta image"
                 />
                 <div className="w-full max-w-full flex flex-col justify-center items-center text-center absolute z-2 text-4xl px-4">
-                    <p className={`text-[#ffc72c] ${bebasNeue.className} text-6xl`}>PASTAFIAMMA</p>
-                    <p className={`${permanentMarker.className} text-4xl`}>Preparata da noi con <span className="text-[#da291c] font-extrabold">amore</span> ogni giorno</p>
+                    <p className={`text-[#ffc72c] ${bebasNeue.className} text-7xl md:text-9xl`}>PASTAFIAMMA</p>
+                    <p className={`${permanentMarker.className} text-4xl md:text-6x`}>Preparata da noi con <span className="text-[#da291c] font-extrabold">amore</span> ogni giorno</p>
                 </div>                 
             </div>
             
