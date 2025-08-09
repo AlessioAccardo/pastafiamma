@@ -59,9 +59,6 @@ function Menu() {
     const [show, setShow] = useState(false);
     const rafRef = useRef(null);
 
-
-    let totale = 0;
-
     useEffect(() => {
         if (typeof window === 'undefined') return;
 
@@ -116,6 +113,7 @@ function Menu() {
                     widthImg2={180}
                     heightImg2={180}
                     imgPiatto={"piatto5"}
+                    setTotalCost={setTotalCost}
                 />
                 <MenuCard 
                     title={"Scegli il formato"}
@@ -127,6 +125,7 @@ function Menu() {
                     widthImg2={180}
                     heightImg2={180}
                     imgPiatto={"piatto4"}
+                    setTotalCost={setTotalCost}
                 />
                 <MenuCard 
                     title={"Scegli il condimento"}
@@ -138,6 +137,7 @@ function Menu() {
                     widthImg2={120}
                     heightImg2={120}
                     imgPiatto={"piatto6"}
+                    setTotalCost={setTotalCost}
                 />
                 <MenuCard 
                     title={"Scegli gli extra"}
@@ -149,12 +149,13 @@ function Menu() {
                     widthImg2={180}
                     heightImg2={180}
                     imgPiatto={"piatto3"}
+                    setTotalCost={setTotalCost}
                 />
             </div>
             { show && (
-                <div className="bg-[#ffc72c] text-white flex justify-center items-center sticky bottom-4 w-full max-w-[85%] px-6 py-3 z-4 mb-6 border-0 rounded-2xl text-3xl">
+                <div className="bg-[#ffc72c] text-white flex justify-center items-center sticky bottom-4 w-full max-w-[85%] px-6 py-3 z-4 mb-6 border-0 rounded-2xl text-3xl gap-2">
                     <p>Totale</p>
-                    <p>{totale}</p>
+                    <p>{totalCost}€</p>
                 </div>
             )}
         </div>

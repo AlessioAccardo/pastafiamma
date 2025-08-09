@@ -2,7 +2,35 @@ import Image from "next/image";
 
 function MenuCard(props) {
     
-    const { title, state, setState, data, widthImg1, heightImg1, widthImg2, heightImg2, imgPiatto } = props;
+    const { title, state, setState, data, widthImg1, heightImg1, widthImg2, heightImg2, imgPiatto, setTotalCost } = props;
+
+
+    const handleClick = (element, elementIndex) => {
+        const price = Number(element?.price ?? 0);
+        const prevElement = state;
+
+        if (prevElement === null) {
+            setTotalCost(prev => (Math.round((prev + price) * 100) / 100));
+            setState(elementIndex);
+            return;
+        }
+
+        if (elementIndex === prevElement) {
+            setTotalCost(prev => (Math.round((prev - price) * 100) / 100));
+            setState(null);
+            return;
+        }
+
+        if (elementIndex !== prevElement) {
+            const prevObj = data[prevElement];
+            const prevPrice = prevObj?.price ?? 0;
+
+            setTotalCost(prev => (Math.round((prev - prevPrice + price) * 100) / 100));
+            setState(elementIndex);
+            return;
+        }
+    }
+
 
     return (
         <div className="flex flex-col w-full justify-center items-center gap-5 py-10">
@@ -12,7 +40,7 @@ function MenuCard(props) {
                     const isSelected = elementIndex === state;
                     return (
                         <div key={elementIndex} className={`${isSelected ? "bg-[#da291c] text-white" : ""} cursor-pointer flex flex-col justify-center items-center gap-10 relative w-full max-w-[25%] h-[25rem] active:opacity-80 transition-all duration-300 py-4 border-0 rounded-4xl shadow-2xs`} onClick={() => {
-                            setState(prev => (prev === elementIndex ? null : elementIndex));
+                            handleClick(element, elementIndex);
                         }}>
                             <h2 className="mb-2">{element.name}</h2>
                             {isSelected && (
