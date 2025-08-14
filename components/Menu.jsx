@@ -150,7 +150,6 @@ function Menu() {
                     heightImg2={120}
                     imgPiatto={"piatto6"}
                     setTotalCost={setTotalCost}
-                    long={true}
                 />
                 <MenuCard 
                     title={"Scegli gli extra"}
@@ -173,6 +172,10 @@ function Menu() {
                     </div>
                     <div className="flex flex-col justify-center items-center cursor-pointer" onClick={() => {
                         setTotalCost(0);
+                        setIsCondimentoPastaSelected(null);
+                        setIsExtraSelected(null);
+                        setIsFormatoPastaSelected(null);
+                        setIsTipoPastaSelected(null);
                     }}>
                         <i className="fa-solid fa-recycle hidden md:block"/>
                         <p className="uppercase text-2xl">reset</p>

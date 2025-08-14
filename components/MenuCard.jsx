@@ -2,7 +2,7 @@ import Image from "next/image";
 
 function MenuCard(props) {
     
-    const { title, state, setState, data, widthImg1, heightImg1, widthImg2, heightImg2, imgPiatto, setTotalCost, long } = props;
+    const { title, state, setState, data, widthImg1, heightImg1, widthImg2, heightImg2, imgPiatto, setTotalCost } = props;
 
 
     const handleClick = (element, elementIndex) => {
